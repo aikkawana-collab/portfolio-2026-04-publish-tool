@@ -1,0 +1,189 @@
+{
+  "version": "1.1.0",
+  "description": "Sanitize rules dictionary - 15 required patterns per requirements.md FR-10 + custom business name patterns",
+  "rules": [
+    {
+      "id": "business-name-redacted",
+      "pattern": "本アプリ\\s*業績(記録|管理)アプリ",
+      "replacement": "業績管理アプリ",
+      "severity": "critical",
+      "description": "Business name '本アプリ' as part of app title - replace with generic"
+    },
+    {
+      "id": "business-name-redacted-yotei-daichou",
+      "pattern": "本アプリ\\s*予約台帳",
+      "replacement": "予約台帳",
+      "severity": "critical",
+      "description": "Business name '本アプリ' in spreadsheet name"
+    },
+    {
+      "id": "business-name-redacted-business-tracker",
+      "pattern": "business-tracker",
+      "replacement": "business-tracker",
+      "severity": "critical",
+      "description": "Business name 'business-app' in repo identifier"
+    },
+    {
+      "id": "business-name-redacted-pages",
+      "pattern": "production-pages",
+      "replacement": "production-pages",
+      "severity": "critical",
+      "description": "Business name 'business-app' in deployment identifier"
+    },
+    {
+      "id": "business-name-redacted-reservation",
+      "pattern": "reservation-app",
+      "replacement": "reservation-app",
+      "severity": "critical",
+      "description": "Business name 'business-app' in project name"
+    },
+    {
+      "id": "business-name-redacted-generic",
+      "pattern": "業績管理",
+      "replacement": "業績管理",
+      "severity": "critical",
+      "description": "業績管理 (no space) compound"
+    },
+    {
+      "id": "business-name-redacted-bare",
+      "pattern": "(?<![\\w])本アプリ(?![\\w])",
+      "replacement": "本アプリ",
+      "severity": "critical",
+      "description": "Bare '本アプリ' word boundary"
+    },
+    {
+      "id": "business-name-redacted-lowercase",
+      "pattern": "(?<![\\w])business-app(?![\\w])",
+      "replacement": "business-app",
+      "severity": "critical",
+      "description": "Bare 'business-app' lowercase word boundary"
+    },
+    {
+      "id": "email-generic",
+      "pattern": "[\\w.+-]+@[\\w-]+\\.[\\w.-]+",
+      "replacement": "<email>",
+      "severity": "critical",
+      "description": "Email address (RFC5322 simplified)"
+    },
+    {
+      "id": "gas-script-id",
+      "pattern": "1[\\w-]{43}",
+      "replacement": "<script-id>",
+      "severity": "critical",
+      "description": "Google Apps Script ID (44 chars starting with 1)"
+    },
+    {
+      "id": "gas-deployment-id",
+      "pattern": "AKfycb[\\w_-]{50,}",
+      "replacement": "<deployment-id>",
+      "severity": "critical",
+      "description": "GAS Deployment ID (AKfycb prefix)"
+    },
+    {
+      "id": "gas-webapp-url",
+      "pattern": "https://script\\.google\\.com/macros/s/[\\w_-]+/(exec|dev)",
+      "replacement": "<webapp-url>",
+      "severity": "critical",
+      "description": "GAS Web App URL"
+    },
+    {
+      "id": "google-spreadsheet-id",
+      "pattern": "/spreadsheets/d/[\\w-]{44}",
+      "replacement": "/spreadsheets/d/<spreadsheet-id>",
+      "severity": "critical",
+      "description": "Google Spreadsheet ID in URL"
+    },
+    {
+      "id": "gcp-api-key",
+      "pattern": "AIza[\\w_-]{35}",
+      "replacement": "<gcp-api-key>",
+      "severity": "critical",
+      "description": "Google Cloud Platform API Key"
+    },
+    {
+      "id": "google-oauth-token",
+      "pattern": "ya29\\.[\\w_.-]+",
+      "replacement": "<google-oauth-token>",
+      "severity": "critical",
+      "description": "Google OAuth Access Token"
+    },
+    {
+      "id": "notion-integration-token",
+      "pattern": "ntn_\\w{40,}",
+      "replacement": "<notion-token>",
+      "severity": "critical",
+      "description": "Notion Integration Secret Token"
+    },
+    {
+      "id": "github-pat-classic",
+      "pattern": "ghp_\\w{36,}",
+      "replacement": "<github-pat>",
+      "severity": "critical",
+      "description": "GitHub Personal Access Token (classic)"
+    },
+    {
+      "id": "github-pat-finegrained",
+      "pattern": "github_pat_[\\w_]{80,}",
+      "replacement": "<github-pat>",
+      "severity": "critical",
+      "description": "GitHub Fine-grained PAT"
+    },
+    {
+      "id": "openai-api-key",
+      "pattern": "sk-[A-Za-z0-9]{20,}",
+      "replacement": "<openai-key>",
+      "severity": "critical",
+      "description": "OpenAI API Key"
+    },
+    {
+      "id": "anthropic-api-key",
+      "pattern": "sk-ant-[A-Za-z0-9_-]{90,}",
+      "replacement": "<anthropic-key>",
+      "severity": "critical",
+      "description": "Anthropic API Key"
+    },
+    {
+      "id": "aws-access-key-id",
+      "pattern": "AKIA[0-9A-Z]{16}",
+      "replacement": "<aws-access-key>",
+      "severity": "critical",
+      "description": "AWS Access Key ID"
+    },
+    {
+      "id": "jwt-token",
+      "pattern": "eyJ[\\w-]{10,}\\.[\\w-]{10,}\\.[\\w-]{10,}",
+      "replacement": "<jwt>",
+      "severity": "critical",
+      "description": "JWT Token"
+    },
+    {
+      "id": "basic-auth-header",
+      "pattern": "Basic\\s+[A-Za-z0-9+/=]{20,}",
+      "replacement": "Basic <credentials>",
+      "severity": "critical",
+      "description": "Basic Auth header"
+    }
+  ],
+  "skipPatterns": [
+    "**/*.png",
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.gif",
+    "**/*.pdf",
+    "**/*.mp4",
+    "**/*.mov",
+    "**/*.zip",
+    "**/*.ico",
+    "**/*.svg",
+    "**/*.webp",
+    "**/*.woff",
+    "**/*.woff2",
+    "**/*.ttf",
+    "**/*.eot",
+    "**/*.lock",
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/dist/**",
+    "**/build/**"
+  ]
+}

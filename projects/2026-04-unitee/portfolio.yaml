@@ -1,0 +1,52 @@
+title: "業績記録アプリ"
+tagline: "スマホ特化・個人事業向けの月額0円業績管理ツール"
+category: "業務自動化"
+tech_stack:
+  - "Google Apps Script"
+  - "HTML / CSS / Vanilla JS"
+  - "Google Sheets"
+  - "Google Calendar"
+status: "リリース済"
+project_type: "自主開発"
+key_metric: "月額0円でCalendly代替を実現・実装18.5時間"
+published_at: "2026-04-20"
+target_role: "個人事業主向け / 要件定義〜実装〜運用まで一人担当"
+overview: |
+  個人事業主が業績記録をスマホから手軽に管理するツール。
+  Google カレンダーとスプレッドシートに同時反映される仕組みを
+  Google Apps Script のみで構築し、月額コスト0円で運用可能。
+problem:
+  - "既存の業績管理ツールは月額制で個人事業主には高い"
+  - "スマホで素早く入力できるシンプルなツールが少ない"
+  - "カレンダーとスプシを手動で同期する手間が継続を阻害"
+solution: |
+  Google Workspace のみで完結する業績管理ツールを開発。
+  スマホ最適化UIで30秒以内に記録可能、GASのトリガーで
+  カレンダーとスプシに自動同期。
+features:
+  - "ワンタップで業績記録（30秒以内の入力）"
+  - "Googleカレンダーと双方向同期"
+  - "月次/年次の集計ダッシュボード"
+  - "ミニカレンダーUIを外部ライブラリゼロで自作"
+results: |
+  月額コスト $0、実装18.5時間、要件定義v4.0.1でQA 100/100達成。
+  19 Issue 全て完了、約1,200行のコード規模で動作。
+
+featured: true
+live_demo_url: null
+cover_image: null
+github_public_name: "portfolio-2026-04-business-tracker"
+architecture_note: |
+  HTML Service をフロント、GAS をバックエンド、スプレッドシートをDBとする
+  シンプルな3層構造。CacheService で同時アクセス時の API レート制限を回避。
+highlights:
+  - "Calendly 代替を $0 で実現（BtoC事業者向け）"
+  - "ミニカレンダー UI を外部ライブラリゼロで自作"
+  - "要件定義 v1.0→v4.0.1 の5回改訂で QA 100/100"
+disclosure_note: "個人開発のため掲載可"
+license: "MIT"
+metrics:
+  dev_hours: 18.5
+  lines_of_code: 1200
+  issues_closed: "19/19"
+  cost: "$0/月"

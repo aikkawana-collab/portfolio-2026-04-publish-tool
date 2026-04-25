@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-publish-tool",
+  "version": "0.1.0",
+  "description": "Portfolio Publish Tool - GitHub URLからNotionポートフォリオを自動公開",
+  "type": "module",
+  "bin": {
+    "portfolio-publish": "./publish.mjs"
+  },
+  "scripts": {
+    "start": "node publish.mjs",
+    "test": "node --test test/",
+    "dev": "node --watch publish.mjs"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "js-yaml": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Secrets
+tool/config/secrets.local.json
+.env
+.env.*
+
+# Build/cache
+/tmp/
+*.log
+*.tmp
+
+# OS/editor
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Portfolio output (can be regenerated)
+out/announcements/*/
+!out/announcements/.gitkeep
+
+# Temporary backups
+*.bak
+*.bak.*
+
+# Test projects (excluded from tool repo)
+projects/*-test/
+
+# Claude Code internal files
+.agent-trace/
+tool/.agent-trace/
+.workflow_state.json
+.claude/
+
