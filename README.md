@@ -40,11 +40,11 @@ publish.mjsを起点にクローン→サニタイズ→READMEテンプレ展開
 
 | 技術 | 用途 |
 | --- | --- |
-| Node.js 22+ | 実装 |
-| JavaScript (ESM) | 実装 |
-| gh CLI | 実装 |
-| Notion API | 実装 |
-| node:test | 実装 |
+| Node.js 22+ | ランタイム・ネイティブテストランナー実行基盤 |
+| JavaScript (ESM) | 実装言語・モジュール構成（外部依存最小化） |
+| gh CLI | GitHub API 操作（リポジトリ作成・push・権限制御） |
+| Notion API | Projects DB へのレコード追加・2層構造の子ページ生成 |
+| node:test | 38ユニットテスト（サニタイザ／残存スキャナ／バリデータ／告知文ジェネレータ） |
 
 
 
